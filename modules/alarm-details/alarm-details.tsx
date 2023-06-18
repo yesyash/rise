@@ -5,10 +5,21 @@ import { Time } from '../../components';
 
 import { PageTitle } from './components';
 
-export const AlarmDetails = () => {
+type Props = {
+  route: {
+    params: {
+      alarmId: string
+    }
+  }
+}
+
+export const AlarmDetails = ({ route }: { route: any }) => {
+  const { alarmId } = route.params
+
   return (
     <View style={styles.container}>
       <PageTitle title='RDS Morning Club' />
+      <Text style={styles.text}>alarm Id: {JSON.stringify(alarmId)}</Text>
 
       <View style={{
         padding: 16,
